@@ -5,14 +5,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
-
-import { AngularFireModule } from '@angular/fire/compat';
-import { AngularFireAuthModule } from '@angular/fire/compat/auth';
-import { AngularFireStorageModule } from '@angular/fire/compat/storage';
-import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
-
-import { environment } from '../environments/environment';
 import { RouterModule } from '@angular/router';
 import { ProductsComponent } from './pages/dashboard/dashboard.component';
 import { NewProductFormComponent } from './pages/new-product/new-product.component';
@@ -20,7 +12,6 @@ import { NewProductFormComponent } from './pages/new-product/new-product.compone
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
-import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -39,18 +30,12 @@ import { MatDialogModule } from '@angular/material/dialog';
     ProductsComponent,
     NewProductFormComponent,
     SidenavComponent,
-    HomeComponent,
     HeaderComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule,
-    AngularFirestoreModule,
-    AngularFireStorageModule,
-    AngularFireDatabaseModule,
     FontAwesomeModule,
     RouterModule.forRoot([
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },

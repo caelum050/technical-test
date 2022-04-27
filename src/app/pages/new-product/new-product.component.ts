@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CrudService } from './../../shared/services/crud.service';
 
-import { map } from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Product } from 'src/app/shared/models/product.service';
 import { ConfigService } from 'src/app/shared/services/config.service';
 
 @Component({
@@ -27,7 +24,6 @@ export class NewProductFormComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private crudService: CrudService,
     private route: ActivatedRoute,
     public restApi: ConfigService
   ) {
@@ -78,31 +74,4 @@ export class NewProductFormComponent implements OnInit {
       });
     }
   }
-
-  // FIREBASE
-
-  // getProduct(productId: string) {
-  //   this.crudService
-  //       .getProduct(productId)
-  //       .ref.get()
-  //       .then((doc) => {
-  //         if (doc.exists) {
-  //           this.product = doc.data()!;
-  //         }
-  //       });
-  //   }
-
-  // save(product: any) {
-  //   if (this.isEditing) {
-  //     this.crudService
-  //       .updateProduct(this.currentProductId!, product)
-  //       .then(() => {
-  //         this.router.navigate(['/dashboard']);
-  //       });
-  //   } else {
-  //     this.crudService.saveProduct(product).then(() => {
-  //       this.router.navigate(['/dashboard']);
-  //     });
-  //   }
-  // }
 }
