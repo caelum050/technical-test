@@ -1,0 +1,54 @@
+{
+  "products": [
+    {
+      "name": "Alien Workshop OG Burst Mint Deck",
+      "description": "ALIEN WORKSHOP",
+      "category": "Deck",
+      "price": 36.5,
+      "quantity": 15,
+      "stock": true,
+      "imageUrl": "https://img.skatewarehouse.com/watermark/rs.php?path=AWOGMDK-1.jpg&nw=435",
+      "id": "1"
+    },
+    {
+      "name": "Bones STF Zane Timpson V4 Wide Wheels",
+      "description": "ZANE TIMPSON PRO MODEL | V4 SHAPE",
+      "category": "Wheels",
+      "price": 25.98,
+      "quantity": 3,
+      "stock": true,
+      "imageUrl": "https://img.skatewarehouse.com/watermark/rs.php?path=BSZTWH-WH-1.jpg&nw=435",
+      "id": "3"
+    },
+    {
+      "name": "Enjoi Whitey Panda Complete",
+      "description": "ENJOI SKATEBOARDS",
+      "category": "Complete Skateboard",
+      "price": 79.99,
+      "quantity": 0,
+      "stock": false,
+      "imageUrl": "https://img.skatewarehouse.com/watermark/rs.php?path=EIWP7CMP-1.jpg&nw=435",
+      "id": "W4Wx6rR"
+    },
+    {
+      "name": "Ace AF1 Truck Polished",
+      "description": "ACE TRUCKS",
+      "category": "Trucks",
+      "price": 31.99,
+      "quantity": 15,
+      "stock": true,
+      "imageUrl": "https://img.skatewarehouse.com/watermark/rs.php?path=ACAF1TK-SI-SI-1.jpg&nw=435",
+      "id": "DmBcNuH"
+    },
+    {
+      "name": "Plan B McClung Mixed Media Deck ",
+      "description": "TREVOR MCCLUNG PRO MODEL | PLAN B SKATEBOARDS",
+      "category": "Deck",
+      "price": 48.98,
+      "quantity": 0,
+      "stock": false,
+      "imageUrl": "https://img.skatewarehouse.com/watermark/rs.php?path=PLMM82DK-1.jpg&nw=435",
+      "id": "xCDa_rt"
+    }
+  ]
+}

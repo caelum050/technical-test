@@ -1,0 +1,195 @@
+<div class="container-fluid page">
+  <div class="d-flex page__box p3 mt-2">
+    <mat-toolbar-row>
+      <span
+        ><a [routerLink]="['/dashboard']" class="btn btn-primary"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="25"
+            height="25"
+            fill="currentColor"
+            class="bi bi-arrow-bar-left"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M12.5 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5zM10 8a.5.5 0 0 1-.5.5H3.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L3.707 7.5H9.5a.5.5 0 0 1 .5.5z"
+            /></svg
+          >Regresar</a
+        ></span
+      >
+    </mat-toolbar-row>
+  </div>
+  <div class="page__content position-relative">
+    <div class="page__content-data">
+      <div class="row">
+        <div class="col-md-6">
+          <form #f="ngForm" (ngSubmit)="save(f.value)">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input
+                #name="ngModel"
+                [(ngModel)]="product.name"
+                name="name"
+                id="name"
+                type="text"
+                class="form-control"
+                required
+              />
+              <div
+                class="alert alert-danger"
+                *ngIf="name.touched && name.invalid"
+              >
+                Name is required.
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="name">Description</label>
+              <input
+                #description="ngModel"
+                [(ngModel)]="product.description"
+                name="description"
+                id="description"
+                type="text"
+                class="form-control"
+                required
+              />
+              <div
+                class="alert alert-danger"
+                *ngIf="description.touched && description.invalid"
+              >
+                Description is required.
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="name">Category</label>
+              <input
+                #category="ngModel"
+                [(ngModel)]="product.category"
+                name="category"
+                id="category"
+                type="text"
+                class="form-control"
+                required
+              />
+              <div
+                class="alert alert-danger"
+                *ngIf="category.touched && category.invalid"
+              >
+                Category is required.
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="price">Price</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">$</div>
+                </div>
+                <input
+                  #price="ngModel"
+                  [(ngModel)]="product.price"
+                  name="price"
+                  id="price"
+                  type="number"
+                  class="form-control"
+                  min="0"
+                  required
+                />
+              </div>
+              <div
+                class="alert alert-danger"
+                *ngIf="price.touched && price.invalid"
+              >
+                Price is required.
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="quantity">Quantity</label>
+              <input
+                #quantity="ngModel"
+                [(ngModel)]="product.quantity"
+                name="quantity"
+                id="quantity"
+                type="number"
+                class="form-control"
+                min="0"
+                required
+              />
+              <div
+                class="alert alert-danger"
+                *ngIf="quantity.touched && quantity.invalid"
+              >
+                Quantity is required.
+              </div>
+            </div>
+
+            <div class="form-check">
+              <input
+                #stock="ngModel"
+                [(ngModel)]="product.stock"
+                name="stock"
+                id="stock"
+                type="checkbox"
+                class="form-check-input"
+              />
+              <label class="form-check-label" for="exampleCheck1"
+                >In Stock</label
+              >
+            </div>
+
+            <br />
+
+            <div class="form-group">
+              <label for="imageUrl">Image URL</label>
+              <input
+                #imageUrl="ngModel"
+                [(ngModel)]="product.imageUrl"
+                name="imageUrl"
+                id="imageUrl"
+                type="text"
+                class="form-control"
+                required
+              />
+              <div
+                class="alert alert-danger"
+                *ngIf="imageUrl.touched && imageUrl.invalid"
+              >
+                Image Url is required.
+              </div>
+            </div>
+            <button
+              class="btn btn-primary"
+              [disabled]="
+                !product.name ||
+                !product.description ||
+                !product.category ||
+                !product.price ||
+                !product.imageUrl ||
+                product.price < 0 ||
+                product.quantity < 0
+              "
+            >
+              Save
+            </button>
+          </form>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card" style="width: 18rem">
+            <img
+              *ngIf="product.imageUrl"
+              class="card-img-top"
+              [src]="imageUrl.value"
+            />
+            <div class="card-body">
+              <h5 class="card-title">{{ name.value }}</h5>
+              <p class="card-text">{{ description.value }}</p>
+              <p class="card-text">{{ price.value | currency }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
